@@ -340,21 +340,23 @@ export default function ScrollSnapGallery() {
         <div className="text-2xl font-bold text-center px-4">{displayText}</div>
         {renderImages()}
         {index === items.length - 1 && (
-          <motion.button
-            onClick={() => navigate('/timeline')}
-            className="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-[#987070] text-white px-8 py-3 rounded-full shadow-lg hover:bg-[#C39898] transition-colors duration-300"
-            initial={{ scale: 1 }}
-            animate={{ 
-              scale: [1, 1.1, 1],
-            }}
-            transition={{ 
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            우리의 타임라인 구경하기    
-          </motion.button>
+          <div className="w-full flex justify-center mt-20 mb-10">
+            <motion.button
+              onClick={() => navigate('/timeline')}
+              className="bg-[#987070] text-white px-8 py-3 rounded-full shadow-lg hover:bg-[#C39898] transition-colors duration-300"
+              initial={{ scale: 1 }}
+              animate={{ 
+                scale: [1, 1.1, 1],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              우리의 타임라인 구경하기    
+            </motion.button>
+          </div>
         )}
       </motion.section>
     );

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import HextechChest from './components/HextechChest';
 import Heart from './components/Heart';
-import Letter from './components/letter.tsx';
+import Letter from './components/Letter.tsx';
 import Timeline from './components/Timeline';
 
 function App() {
