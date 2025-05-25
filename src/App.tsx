@@ -1,9 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import HextechChest from './components/HextechChest';
 import Heart from './components/Heart';
 import Letter from './components/Letter.tsx';
 import Timeline from './components/Timeline';
+
+// ScrollToTop component to handle scroll behavior
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
@@ -15,6 +28,7 @@ function App() {
         {/* 모바일 화면 컨텐츠 */}
         <div className="relative w-full h-full bg-[#F1E5D1]">
           <Router>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<AuthPage />} />
               <Route path="/heart" element={<Heart />} />

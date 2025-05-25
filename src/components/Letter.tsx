@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import soodar from '../assets/soodar.png';
-import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+
 
 export default function Letter() {
-  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const fullText = `자기 우리의 200일 축하해 💕
 
