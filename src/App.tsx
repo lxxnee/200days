@@ -12,7 +12,19 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // 모바일 환경을 위한 스크롤 처리
+    const scrollToTop = () => {
+      const mainElement = document.querySelector('main');
+      if (mainElement) {
+        mainElement.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+      window.scrollTo(0, 0);
+    };
+
+    scrollToTop();
   }, [pathname]);
 
   return null;
